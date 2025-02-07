@@ -9,4 +9,5 @@ class MainPage(BasePage):
         login_link.click()
 
     def should_be_login_link(self):
-        self.browser.find_element(By.CSS_SELECTOR, "#login_link_invalid")
+        """Проверка ссылки на логин"""
+        assert self.is_element_present(By.XPATH, "//a[@id='login_link']"), "Ссылка на логин отсутствует"
