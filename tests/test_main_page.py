@@ -19,7 +19,6 @@ def test_guest_should_see_login_link(browser):
 def test_check_login_page(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     main_page = MainPage(browser, link)
-    login_page = LoginPage(browser, link)
-    login_page.open()
-    main_page.go_to_login_page()
+    main_page.open()
+    login_page = main_page.go_to_login_page()
     login_page.should_be_login_page()
