@@ -6,5 +6,13 @@ class MainPageLocators:
 
 
 class LoginPageLocators:
-    LOGIN_FORM = (By.XPATH, "//form[@id=login_form]")
-    REGISTRATION_FORM = (By.XPATH, "//form[@id=register_form]")
+    LOGIN_FORM = (By.XPATH, "//form[@id='login_form']")
+    REGISTRATION_FORM = (By.XPATH, "//form[@id='register_form']")
+
+
+class ProductPageLocators:
+    ADD_TO_BASKET_BUTTON = (By.XPATH, "//button[@value='Add to basket']")
+    MESSAGES = (By.XPATH, "//div[@id='messages']")
+    PRODUCT_NAME = (By.XPATH, "//div[@class='col-sm-6 product_main']/h1")
+    PRODUCT_PRICE = (By.XPATH, "//p[@class='price_color']")
+    BASKET_TOTAL = (By.CSS_SELECTOR, ".alert-info .alertinner strong")
