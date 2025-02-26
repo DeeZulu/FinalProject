@@ -12,7 +12,7 @@ class LoginPageLocators:
 
 class ProductPageLocators:
     ADD_TO_BASKET_BUTTON = (By.XPATH, "//button[@value='Add to basket']")
-    MESSAGES = (By.XPATH, "//div[@id='messages']")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
     PRODUCT_NAME = (By.XPATH, "//div[@class='col-sm-6 product_main']/h1")
     PRODUCT_PRICE = (By.XPATH, "//p[@class='price_color']")
     BASKET_TOTAL = (By.CSS_SELECTOR, ".alert-info .alertinner strong")

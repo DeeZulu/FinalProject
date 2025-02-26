@@ -9,7 +9,7 @@ class ProductPage(BasePage):
 
     def check_product_added_to_basket(self):
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME)
-        messages = self.browser.find_element(*ProductPageLocators.MESSAGES)
+        messages = self.browser.find_element(*ProductPageLocators.SUCCESS_MESSAGE)
         assert f"{product_name.text} has been added to your basket" in messages.text,\
             f"Товар {product_name.text} не был добавлен в корзину"
 
@@ -18,3 +18,6 @@ class ProductPage(BasePage):
         basket_total = self.browser.find_element(*ProductPageLocators.BASKET_TOTAL)
         assert product_price.text == basket_total.text, "Итоговая сумма в корзине отличается от стоимости товара\n" \
                                                         f"Корзина - {basket_total.text}\nТовар - {product_price.text}"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "сообщение есть"
