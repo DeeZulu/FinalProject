@@ -5,7 +5,7 @@ from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 
-from pages.locators import BasePageLocators
+from pages.locators import BasePageLocators, MainPageLocators
 
 
 class BasePage:
@@ -17,6 +17,9 @@ class BasePage:
     def go_to_login_page(self):
         login_link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         login_link.click()
+
+    def go_to_basket(self):
+        self.browser.find_element(*MainPageLocators.BASKET).click()
 
     def should_be_login_link(self):
         """Проверка ссылки на логин"""
